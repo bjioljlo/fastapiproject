@@ -1,6 +1,7 @@
 # main.py
 
 from fastapi import FastAPI
+from fastapi.responses import Response
 from fast_api_project.api.v1 import api_router as api_v1_router
 from fast_api_project.api.v2 import api_router as api_v2_router
 from fast_api_project.core.config import settings
@@ -8,6 +9,12 @@ from fast_api_project.core.config import settings
 app = FastAPI(title=settings.app.TITLE, version=settings.app.VERSION)
 app.include_router(api_v1_router, prefix="/api/v1", tags=["api_v1"])
 app.include_router(api_v2_router, prefix="/api/v2", tags=["api_v2"])
+
+
+@app.get("/favicon.ico")
+def favicon():
+    """Suppress browser favicon 404"""
+    return Response(status_code=204)
 
 
 @app.get("/")
