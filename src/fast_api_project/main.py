@@ -20,7 +20,7 @@ if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run(
-        "main:app",
+        "fast_api_project.main:app",
         host=settings.server.HOST,
         port=settings.server.PORT,
     )
