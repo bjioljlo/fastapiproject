@@ -6,5 +6,8 @@ dist/
 wheels/
 *.egg-info
 
+# Environment variables (contains sensitive credentials - NEVER commit)
+.env
+
 # Virtual environments
 .venv
