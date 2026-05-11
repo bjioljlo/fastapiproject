@@ -1,8 +1,8 @@
 # main.py
 
 from fastapi import FastAPI
-from .api.v1 import api_router as api_v1_router
-from .api.v2 import api_router as api_v2_router
+from fast_api_project.api.v1 import api_router as api_v1_router
+from fast_api_project.api.v2 import api_router as api_v2_router
 
 app = FastAPI(title="OH~MY~~API", version="1.0.0")
 app.include_router(api_v1_router, prefix="/api/v1", tags=["api_v1"])
